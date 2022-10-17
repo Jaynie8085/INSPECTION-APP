@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <script src="/js/axios/dist/axios.min.js"></script>
+  </head>
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+
+      <!-- TOP NAV -->
+      <div class="top-nav navbar" id="home">
+          <div class="container">
+              <div class="row justify-content-between">
+                  <div class="col-auto">
+                      <p> <i class='bx bxs-envelope'></i> inspection.app@gmail.com</p>
+                      <p> <i class='bx bxs-phone-call'></i> (+254) 555-0114</p>
+                  </div>
+                  <div class="col-auto social-icons">
+                      <a href="#"><i class='bx bxl-facebook'></i></a>
+                      <a href="#"><i class='bx bxl-twitter'></i></a>
+                      <a href="#"><i class='bx bxl-instagram'></i></a>
+                      <a href="#"><i class='bx bxl-pinterest'></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 py-8">
+            <div class="row">
+              <h2>Login with username your and password</h2>
+              <div class="col-12">
+      <!-- username  -->
+      <div class="username">
+        <label for="username">username</label>
+        <input
+          type="username"
+          name="username"
+          id="username"
+          placeholder="Write your username"
+        />
+      </div>
+      <!-- Email  -->
+      <div class="email">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Write your email"
+        />
+      </div>
+      <!-- passWord -->
+      <div class="pass">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="password"
+        />
+      </div>
+      <!-- licence_no -->
+      <div class="pass">
+        <label for="licence_no">Licence Number</label>
+        <input
+          name="licence_no"
+          id="licence_no"
+          placeholder="1235478"
+        />
+      </div>
+      
+      <!-- phone -->
+      <div class="pass">
+        <label for="phone">Phone number</label>
+        <input
+          name="phone"
+          id="phone"
+          placeholder="+254 712458963"
+        />
+      </div>      
+
+      <!-- address -->
+      <div class="pass">
+        <label for="address">Address</label>
+        <input
+          type="address"
+          name="address"
+          id="address"
+          placeholder="Thika"
+        />
+      </div> 
+      <!-- Rails button -->
+      <!-- <button id="submit-btn" onclick="rails()">Rails test</button> -->
+      <!-- Sign Up button -->
+      <button id="submit-btn" onclick="signUp();">Sign Up</button>
+      <!-- Sign In option -->
+      <p>Already have an account ?</p>
+      <span><a href="signIn.html">Sign In</a></span>
+    </div>
+    </div>
+    </div>
+    </section>
+  </div>
+    <script src="main.js"></script>
+  </body>
+</html>

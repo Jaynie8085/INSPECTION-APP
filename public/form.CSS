@@ -1,0 +1,79 @@
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);*/
+*:focus {
+  outline: none;
+
+}
+h4{
+  margin-top: 28px;
+  width: 2000px;
+  height: 32px;
+  background: #8a2be2;
+  border: none;
+  border-radius: 2px;
+  color: #16a085;
+  font: weight 900px;
+  display: inline-block;
+
+}
+marquee{
+  width:50%;
+  direction:right to left;
+}
+hr{
+
+
+}
+body {
+  background-color:#9633ff ;
+  margin: 10;
+  padding: 0;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+form{
+    margin: 0 auto; 
+    width:250px;
+  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+	width: 400px;
+    border-radius: 10px;
+    background-color: white;
+    /* height:fit-content;  */
+    padding: 5px 10px;
+}
+label {
+  display:grid;
+  font-weight: bolder;
+  margin: 5px 0px;
+}
+button[type="submit"] {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #8a2be2;
+  border: none;
+  border-radius: 2px;
+  color: #16a085
+;  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  }
+  button[type="cancel"] {
+    margin-top: 28px;
+    width: 120px;
+    height: 32px;
+    background: #8a2be2;
+    border: none;
+    border-radius: 2px;
+    color: #16a085;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    }

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth-compat.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Inspection App</title>
+    
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+    <!-- TOP NAV -->
+    <div class="top-nav" id="home">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-auto">
+            <p><i class="bx bxs-envelope"></i> inspection.app@gmail.com</p>
+            <p><i class="bx bxs-phone-call"></i> (+254) 555-0114</p>
+          </div>
+          <div class="col-auto social-icons">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="home.html"
+          >Inspection App<span class="dot">.</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reviews">Reviews</a>
+            </li>
+          </ul>
+          <a
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            class="btn btn-brand ms-lg-3"
+            >Contact</a
+          >--
+          <a
+            href="signIn.html"
+            class="btn btn-brand ms-lg-6"
+            >Log In</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- SLIDER -->
+    <div class="owl-carousel owl-theme hero-slider">
+      <div class="slide slide1">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center text-white">
+              <h6 class="text-white text-uppercase">
+                <i
+                  >Trusted as a effective major vehicle and offence
+                  inspectors</i
+                >
+              </h6>
+              <h1 class="display-3 my-4">YOUR SAFETY IS OUR<br />PRIORITY</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide2">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-1 text-white">
+              <h6 class="text-white text-uppercase">let us inspect for:.</h6>
+              <h1 class="display-3 my-4">
+                WE INSPECT FOR A SAFE <br />
+                WORLD
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 py-5">
+            <div class="row">
+              <div class="col-12">
+                <div class="info-box">
+                  <img src="img/cericon.jpg" alt="" />
+                  <div class="ms-4">
+                    <h5>NTSA Certification</h5>
+                    <p>
+                      We genuinely certify all the customers who has gone
+                      through the inspection process.<br />This is done to
+                      ensure that the customers has full access to kenyan roads
+                      and also to give them easy time dealing with the traffic
+                      officers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <img src="img/ntsa.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MILESTONE -->
+    <section id="milestone">
+      <div class="container">
+        <div class="row text-center justify-content-center gy-4">
+          <div class="col-lg-2 col-sm-6">
+            <h1 class="display-4">90K+</h1>
+            <p class="mb-0">Happy Clients</p>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <h1 class="display-4">45M</h1>
+            <p class="mb-0">Vehicles certified</p>
+          </div>
+          <div class="col-lg-2 col-sm-6">
+            <h1 class="display-4">150</h1>
+            <p class="mb-0">Government Contracts</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="intro">
+              <h6>Our Services</h6>
+              <h1>What We Do?</h1>
+              <p class="mx-auto">
+                We are so passionate about offering the best and fast services
+                to our customers,basically,trying so hard in giving our clients
+                easy time and allow them book for their inspection dates and
+                location at their own pleasure.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="service">
+              <img src="img/insurance.jpg" alt="" />
+              <h5>Insurance validation</h5>
+              <p>
+                Under Insurance validation,we check on the validity of the
+                vehicle insurance,on the check list we look into:<br />
+                1.The insurance company<br />
+                2. The expirly date of the Insurance<br />
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service">
+              <img src="img/governor.jpg" alt="" />
+              <h5>Speed limiter validation</h5>
+              <p>
+                Speed governors is one of the key point of inspection because
+                most accidents are caused by overspeeding.We look into:<br />
+                1. The fitting company of the governor<br />
+                2. The governor should be a digital one.<br />3.The expirly
+                dates of the govenor.<br />4.The speed governor sticker and
+                certificate.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service">
+              <img src="img/tyres.png" alt="" />
+              <h5>Tyres and wheels</h5>
+              <p>
+                During inspection the tyres should be checked.We look into:<br />1.Wheels
+                and fasteners fitted tightly.<br />2.Tyres in good physical
+                shape.<br />3.Tyres properly inflated.<br />4. Power brakes in
+                good condition.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service">
+              <img src="img/body.jpg" alt="" />
+              <h5>Body and extrenal fittings</h5>
+              <p>
+                The physical body of the vehicle should be checked
+                correctly.Considering:<br />1.wipers,headlights,sidemirrors and
+                other mirrors should be in good condition.<br />2.Door locks and
+                belts in goood shape<br />3.Exhaust system in good shape.<br />4.Free
+                from excessive physical damage.<br />5. Vehicle body paint
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service">
+              <img src="img/engine.png" alt="" />
+              <h5>Engine compartments</h5>
+              <p>
+                Engine checklist during inspection:<br />
+                1.Engine oil level.<br />
+                2. Brake fluid level.<br />
+                3. Batterly secured.<br />
+                4. Coolant level.<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM-MEMBER -->
+    <section id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="intro">
+              <h6>Team</h6>
+              <h1>Team Members</h1>
+              <p class="mx-auto">
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical Latin literature from
+                45 BC, making it over 2000 years old
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-8">
+            <div class="team-member">
+              <div class="image">
+                <br /><br /><br /><img src="img/ntsa.png" alt="" />
+                <div class="social-icons">
+                  <a href="#"><i class="bx bxl-facebook"></i></a>
+                  <a href="#"><i class="bx bxl-twitter"></i></a>
+                  <a href="#"><i class="bx bxl-instagram"></i></a>
+                  <a href="#"><i class="bx bxl-pinterest"></i></a>
+                </div>
+                <div class="overlay"></div>
+              </div>
+
+              <br /><br />
+              <h5>Muigai M.</h5>
+              <p>NTSA Director</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8">
+            <div class="team-member">
+              <div class="image">
+                <img src="img/sss.png" alt="" />
+                <div class="social-icons">
+                  <a href="#"><i class="bx bxl-facebook"></i></a>
+                  <a href="#"><i class="bx bxl-twitter"></i></a>
+                  <a href="#"><i class="bx bxl-instagram"></i></a>
+                  <a href="#"><i class="bx bxl-pinterest"></i></a>
+                </div>
+                <div class="overlay"></div>
+              </div>
+
+              <h5>Kaphy Mukuria</h5>
+              <p>JAYN inspection CEO</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8">
+            <div class="team-member">
+              <div class="image">
+                <img src="img/dvp2.png" alt="" />
+                <div class="social-icons">
+                  <a href="#"><i class="bx bxl-facebook"></i></a>
+                  <a href="#"><i class="bx bxl-twitter"></i></a>
+                  <a href="#"><i class="bx bxl-instagram"></i></a>
+                  <a href="#"><i class="bx bxl-pinterest"></i></a>
+                </div>
+                <div class="overlay"></div>
+              </div>
+
+              <h5>Wangui J. Kiunjuri</h5>
+              <p>system Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM-MEMBER -->
+    <section class="bg-light" id="reviews">
+      <div class="owl-theme owl-carousel reviews-slider container">
+        <div class="review">
+          <div class="person">
+            <img src="img/review3.png" alt="" />
+            <h5>James M.Gichuru</h5>
+            <small>NTSA Officer</small>
+          </div>
+          <h3>
+            With the system,i feel we'll reduce the number of accidents and it
+            will give us such an easy time.
+          </h3>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <i class="bx bxs-quote-alt-left"></i>
+        </div>
+        <div class="review">
+          <div class="person">
+            <img src="img/review2.png" alt="" />
+            <h5>RuffyEdwins.G</h5>
+            <small>kebs director</small>
+          </div>
+          <h3>
+            When i first interacted with the application,i felt it would work so
+            well,i went ahead and brought all my Vehicles for inspection,this is
+            recommendable!!
+          </h3>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <i class="bx bxs-quote-alt-left"></i>
+        </div>
+        <div class="review">
+          <div class="person">
+            <img src="img/review1.png" alt="" />
+            <h5>Miss Ann J.Odhiambo</h5>
+            <small>Kanini Haraka Managerr</small>
+          </div>
+          <h3>
+            Wooow,so remarkable!!<br />This is working so well and would
+            recommend it to all organisations.
+          </h3>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <i class="bx bxs-quote-alt-left"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top text-center">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h4 class="navbar-brand">
+                Inspection App.<span class="dot">.</span>
+              </h4>
+              <p>
+                Offering the best services,we beleive He profits most who serves
+                best.<br />Help us keep our roads safe
+              </p>
+              <div class="col-auto social-icons">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p class="mb-0">Copyright@2022. All rights Reserved</p>
+      </div>
+    </footer>
+
+    <!-- contactModal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <div class="container-fluid">
+              <div class="row gy-4">
+                <div
+                  class="col-lg-4 col-sm-12 bg-cover"
+                  style="
+                    background-image: url(img/contus.jpg);
+                    min-height: 300px;
+                  "
+                >
+                  <div></div>
+                </div>
+                <div class="col-lg-8">
+                  <form class="p-lg-5 col-12 row g-3">
+                    <div>
+                      <h1>Get in touch</h1>
+                      <p>Enter your message</p>
+                    </div>
+                    <div class="col-lg-6">
+                      <label for="userName" class="form-label"
+                        >First name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="John"
+                        id="fuserName"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="col-lg-6">
+                      <label for="userName" class="form-label">Last name</label>
+                      <input
+                        class="form-control"
+                        placeholder="kamau"
+                        id="suserName"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="userName" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Johnkamaa@gmail.com"
+                        id="euserName"
+                        aria-describedby="email"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Enter Message</label
+                      >
+                      <textarea
+                        name=""
+                        placeholder="Yes,how can we help you,Type your message here."
+                        class="form-control"
+                        id=""
+                        rows="4"
+                      ></textarea>
+                    </div>
+
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-brand">
+                        Send Message
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Convert JSON Data to HTML Table</title>
+    <style>
+        th, td, p, input {
+            font:14px Verdana;
+        }
+        table, th, td 
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        th {
+            font-weight:bold;
+        }
+        #loadData {
+            margin: 10px 0 15px 0;
+          }
+    </style>
+</head>
+<body>
+    <input type="button" onclick="draw();" value="Create Table From JSON" />
+    <p id="showData"></p>+
+    <table id="dataTable">
+
+    </table>
+</body>
+
+<script>
+var data = [{
+    "outlet": "JAYANAGAR",
+    "cancelled": 126544,
+    "duplicate": 1
+  },
+  {
+    "outlet": "MALLESHWARAM",
+    "cancelled": 31826,
+    "duplicate": 31
+  },
+  {
+    "outlet": "KOLAR",
+    "cancelled": 10374,
+    "duplicate": 10
+  }
+];
+
+
+function draw() {
+    var avgCancelled = 0;
+    var avgDuplicate = 0;
+    var totalCancelled = 0;
+    var totalDuplicate = 0;
+    for (var i = 0; i < data.length; i++) {
+        totalCancelled += data[i].cancelled;
+        totalDuplicate += data[i].duplicate;
+    }
+    avgCancelled = totalCancelled / data.length;
+    avgDuplicate = totalDuplicate / data.length;
+    drawTableHead()
+    drawTableRows(avgCancelled, avgDuplicate)
+}
+
+function drawTableHead() {
+    var row = $("<tr />");
+    $("#dataTable").append(row);
+    row.append("<th>" + "BILLTYPE"  + "</th>")
+    row.append("<th>" + "AVERAGE"  + "</th>")
+    for (var i = 0; i < data.length; i++) {
+        row.append("<th>" + data[i].outlet  + "</th>")
+    }
+}
+
+function drawTableRows(avgCancelled, avgDuplicate) {
+    var firstRow = $("<tr />");
+    $("#dataTable").append(firstRow);
+    firstRow.append("<td>" + "CANCELLED BILL"  + "</td>")
+    firstRow.append("<td>" + avgCancelled  + "</td>")
+    for (var i = 0; i < data.length; i++) {
+        firstRow.append("<td>" + data[i].cancelled  + "</td>")
+    }
+    var secondRow = $("<tr />");
+    $("#dataTable").append(secondRow);
+    secondRow.append("<td>" + "DUPLICATE BILL"  + "</td>")
+    secondRow.append("<td>" + avgDuplicate  + "</td>")
+    for (var i = 0; i < data.length; i++) {
+        secondRow.append("<td>" + data[i].duplicate  + "</td>")
+    }
+}
+
+
+draw();
+
+    // function CreateTableFromJSON() {
+    //     var myBooks = [
+    //         {
+    //             "Book ID": "1",
+    //             "Book Name": "Computer Architecture",
+    //             "Category": "Computers",
+    //             "Price": "125.60"
+    //         },
+    //         {
+    //             "Book ID": "2",
+    //             "Book Name": "Asp.Net 4 Blue Book",
+    //             "Category": "Programming",
+    //             "Price": "56.00"
+    //         },
+    //         {
+    //             "Book ID": "3",
+    //             "Book Name": "Popular Science",
+    //             "Category": "Science",
+    //             "Price": "210.40"
+    //         }
+    //     ]
+
+    //     // EXTRACT VALUE FOR HTML HEADER. 
+    //     // ('Book ID', 'Book Name', 'Category' and 'Price')
+    //     var col = [];
+    //     for (var i = 0; i < myBooks.length; i++) {
+    //         for (var key in myBooks[i]) {
+    //             if (col.indexOf(key) === -1) {
+    //                 col.push(key);
+    //             }
+    //         }
+    //     }
+
+    //     // CREATE DYNAMIC TABLE.
+    //     var table = document.createElement("table");
+
+    //     // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+    //     var tr = table.insertRow(-1);                   // TABLE ROW.
+
+    //     for (var i = 0; i < col.length; i++) {
+    //         var th = document.createElement("th");      // TABLE HEADER.
+    //         th.innerHTML = col[i];
+    //         tr.appendChild(th);
+    //     }
+
+    //     // ADD JSON DATA TO THE TABLE AS ROWS.
+    //     for (var i = 0; i < myBooks.length; i++) {
+
+    //         tr = table.insertRow(-1);
+
+    //         for (var j = 0; j < col.length; j++) {
+    //             var tabCell = tr.insertCell(-1);
+    //             tabCell.innerHTML = myBooks[i][col[j]];
+    //         }
+    //     }
+
+    //     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+    //     var divContainer = document.getElementById("showData");
+    //     divContainer.innerHTML = "";
+    //     divContainer.appendChild(table);
+    // }
+
+</script>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Data Grid Example</title>
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+</head>
+
+<body>
+    <style>
+        #data-table {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+
+    <h1>TODO List</h1>
+
+    <div id="data-table" class="ag-theme-balham">
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+
+        const columnDefs = [
+            // { field: 'id' },
+            { field: 'user_id' },
+            { field: 'user.username'},
+            { field: 'numberplate' },
+            { field: 'chasisnumber' },
+            { field: 'model' },
+            
+        ];
+
+        const gridOptions = {
+
+            defaultColDef: {
+                sortable: true,
+                filter: 'agTextColumnFilter',
+                resizable: true,               
+            },
+
+            pagination: true,
+            
+            columnDefs: columnDefs,
+            onGridReady: (event) =>{
+            // event.preventDefault(),
+            renderDataInTheTable(event.api)}
+        };
+
+        const eGridDiv = document.getElementById('data-table');
+
+        new agGrid.Grid(eGridDiv, gridOptions);
+
+        function renderDataInTheTable(api) {
+          // e.preventDefault();
+            fetch('http://localhost:3000/api/vehicles')
+                .then(function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    api.setRowData(data);
+                    api.sizeColumnsToFit();
+                })
+        }
+    </script>
+</body>
+</html> -->
