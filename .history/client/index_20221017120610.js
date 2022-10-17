@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // footer.className = "blockquote-footer"; //for styling
       quoteLi.dataset.id = q.id;
       //Grab data and insert it into created elements
-      p.innerHTML = q.date;
+      p.innerHTML = q.date;0
       time.innerHTML = q.time;
       
       footer.innerHTML = q.service;
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // footer.className = "blockquote-footer"; //for styling
       quoteLi.dataset.id = q.id;
       //Grab data and insert it into created elements
-      p.innerHTML = q.offence;
+      p.innerHTML = q.offence;    
       time.innerHTML = q.fine;
 
       footer.innerHTML = q.servicecharge;
@@ -214,39 +214,39 @@ document.addEventListener("DOMContentLoaded", () => {
       quoteLi.append(blockQuote);
       quoteUL.append(quoteLi);
       //Attach all the necessary attributes to delete button
-      dislikesBtn.innerHTML = "Download";
+      dislikesBtn.innerHTML = "Delete";
       dislikesBtn.className = "btn-danger"; //for styling
       dislikesBtn.addEventListener("click", () => print());
-      function print() {
-        let numberplate = "KXX 620f";
-        let chasisno = "222grg5rg45r4g8t7hth6";
-        //  multiplier = parseInt(multiplier);
+      function print() {      
+       let numberplate = "kab 621f"
+       let multiplier = 1
+      //  multiplier = parseInt(multiplier);
 
-        var doc = new jsPDF();
-        doc.setFontSize(22);
-        doc.text(10, 10, "Certificate");
-        doc.setFontSize(16);
-        doc.text(
-          20,
-          20,
-          "This is to certify that the vehicle numberplate: " + numberplate
-        );
-        doc.setFontSize(16);
-        doc.text(30, 30, "Has been successifuly inspected and verified. ");
-        doc.setFontSize(16);
-        doc.text(30, 30, "Has been successifuly inspected and verified. ");
-        doc.setFontSize(16);
-        doc.text(40, 40, "THis is valid for one year (1yr). ");
-        doc.setFontSize(16);
-        doc.text(50, 50, "Only valid for vehicle with chasis no " + chasisno);
-        doc.setFontSize(22);
-        // doc.addPage();
-        doc.setFontSize(22);
+       var doc = new jsPDF();
+       doc.setFontSize(22);
+       doc.text(20, 20, "Certificates");
+       doc.setFontSize(16);
+       doc.text(
+         20,
+         0,
+         "This is to certify that the vehicle numberplate: " +
+           numberplate +
+           "Has been certified with Inspections app for a period of 1year as a psv!"
+       );
 
-        doc.save("Certificate.pdf");
-      }
+       
 
-      // Delete button
+       doc.addPage();
+       doc.setFontSize(22);
+       doc.text(20, 0, "Conguratulations");
+       doc.setFontSize(16);
+
+       for (var i = 1; i <= 12; i++) {
+         doc.text("fetchInspections()");
+       }
+       doc.save("Certificate.pdf");}
+
+        // Delete button
       // function deleteQuote() {
       //   const url = `http://localhost:3000/inspections/${q.id}`;
       //   const reqObj = { method: "DELETE" };

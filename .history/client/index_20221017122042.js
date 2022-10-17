@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
         doc.setFontSize(16);
         doc.text(40, 40, "THis is valid for one year (1yr). ");
         doc.setFontSize(16);
-        doc.text(50, 50, "Only valid for vehicle with chasis no " + chasisno);
+        doc.text(10, 50, "Only valid for vehicle with chasis no " + chasisno);
         doc.setFontSize(22);
         // doc.addPage();
         doc.setFontSize(22);

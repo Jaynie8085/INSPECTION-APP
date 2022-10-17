@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const dislikesBtn = document.createElement("button");
       const numberplate = document.createElement("span");
       const br1 = document.createElement("br");
-      p.innerHTML = q.chasisnumber;    
+      p.innerHTML = q.chasisnumber;
       numberplate.innerHTML = q.numberplate;
       const br2 = document.createElement("br");
       //Add appropriate classes and ids. Grab data and insert if needed.
@@ -93,7 +93,7 @@ function inspections() {
   // const status = document.getElementById("status").value;
   const servicecharge = document.getElementById("servicecharge").value;
   const user_id = 2;
-  
+
   // const btn = document.getElementById("submit-btn").value;
 
   axios
@@ -153,10 +153,10 @@ document.addEventListener("DOMContentLoaded", () => {
       //Grab data and insert it into created elements
       p.innerHTML = q.date;
       time.innerHTML = q.time;
-      
+
       footer.innerHTML = q.service;
       //Append everything to main container
-      blockQuote.append(footer, br1, p, br2, time, br, dislikesBtn,hr);
+      blockQuote.append(footer, br1, p, br2, time, br, dislikesBtn, hr);
       quoteLi.append(blockQuote);
       quoteUL.append(quoteLi);
       //Attach all the necessary attributes to delete button
@@ -214,35 +214,34 @@ document.addEventListener("DOMContentLoaded", () => {
       quoteLi.append(blockQuote);
       quoteUL.append(quoteLi);
       //Attach all the necessary attributes to delete button
-      dislikesBtn.innerHTML = "Download";
+      dislikesBtn.innerHTML = "Delete";
       dislikesBtn.className = "btn-danger"; //for styling
       dislikesBtn.addEventListener("click", () => print());
       function print() {
-        let numberplate = "KXX 620f";
-        let chasisno = "222grg5rg45r4g8t7hth6";
+        let numberplate = "kab 621f";
+        let multiplier = 1;
         //  multiplier = parseInt(multiplier);
 
         var doc = new jsPDF();
         doc.setFontSize(22);
-        doc.text(10, 10, "Certificate");
+        doc.text(20, 20, "Certificates");
         doc.setFontSize(16);
         doc.text(
           20,
-          20,
-          "This is to certify that the vehicle numberplate: " + numberplate
+          0,
+          "This is to certify that the vehicle numberplate: " +
+            numberplate +
+            "Has been certified with Inspections app for a period of 1year as a psv!"
         );
-        doc.setFontSize(16);
-        doc.text(30, 30, "Has been successifuly inspected and verified. ");
-        doc.setFontSize(16);
-        doc.text(30, 30, "Has been successifuly inspected and verified. ");
-        doc.setFontSize(16);
-        doc.text(40, 40, "THis is valid for one year (1yr). ");
-        doc.setFontSize(16);
-        doc.text(50, 50, "Only valid for vehicle with chasis no " + chasisno);
-        doc.setFontSize(22);
-        // doc.addPage();
-        doc.setFontSize(22);
 
+        doc.addPage();
+        doc.setFontSize(22);
+        doc.text(20, 0, "Conguratulations");
+        doc.setFontSize(16);
+
+        for (var i = 1; i <= 12; i++) {
+          doc.text("fetchInspections()");
+        }
         doc.save("Certificate.pdf");
       }
 

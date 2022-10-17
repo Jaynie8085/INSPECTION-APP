@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dislikesBtn.className = "btn-danger"; //for styling
       dislikesBtn.addEventListener("click", () => deleteQuote());
       function deleteQuote() {
-        const url = `http://localhost:3000/vehicles/${q.id}`;
+        const url = `http://localhost:3000/api/vehicles/${q.id}`;
         const reqObj = { method: "DELETE" };
         fetch(url, reqObj).then(quoteLi.remove());
       }
